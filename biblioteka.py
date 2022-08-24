@@ -43,13 +43,17 @@ biblioteka=[filmy,seriale]
 
 
 def get_movies():
-    print('Sortowanie Filmów alfabetycznie: ')
-    return [filmy for filmy in biblioteka if not isinstance(BibliotekaFilmow,BibliotekaSeriali)]
+     print("Sortowanie tytułów filmów alfabetycznie")
+     by_tytul = sorted(filmy, key=lambda BibliotekaFilmow: BibliotekaFilmow.tytul)
+     for a in by_tytul:
+         print (a.tytul, a.rok_wydania)
     
 
 def get_series():
      print('Sortowanie Serialów alfabetycznie: ')
-     return [seriale for seriale in biblioteka if  isinstance(BibliotekaFilmow,BibliotekaSeriali)]
+     by1_tytul= sorted(seriale, key=lambda BibliotekaSeriali: BibliotekaSeriali.tytul)
+     for i in by1_tytul:
+        print(i.tytul,"E0",i.numer_odcinka,"S0",i.numer_sezonu)
 
 def search(szukany_tytul):
     for nazwa in biblioteka:
